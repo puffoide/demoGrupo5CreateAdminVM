@@ -12,12 +12,12 @@ trigger:
 stages:
 - stage: DeployToVM
   jobs: 
-  -  deployment:  InstallApacheAndConfigure
-     displayName: "Instalar Apache y Configurar Página"
+  - deployment: InstallApacheAndConfigure
+    displayName: "Instalar Apache y Configurar Página"
 
     environment: 
-     name: "Admin-Vm-Grupo5"
-     ResourceType: VirtualMachine
+      name: "Admin-Vm-Grupo5"
+      resourceType: VirtualMachine
 
     strategy:
       runOnce:
@@ -29,5 +29,4 @@ stages:
               sudo apt-get install -y apache2
               echo '<h1>Bienvenido, control desde Azure DevOps con CI/CD</h1>' | sudo tee /var/www/html/index.html
               sudo systemctl restart apache2
-              displayName: 'Instalación y configuración de Apache'
-
+            displayName: 'Instalación y configuración de Apache'
