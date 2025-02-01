@@ -24,9 +24,6 @@ stages:
         deploy:
           steps:
           - script: |
-              echo "Iniciando instalación de Apache..."
-              sudo apt-get update
-              sudo apt-get install -y apache2
-              echo '<h1>Bienvenido, control desde Azure DevOps con CI/CD</h1>' | sudo tee /var/www/html/index.html
-              sudo systemctl restart apache2
+              echo "Probando conexion"
+              
             displayName: 'Instalación y configuración de Apache'
